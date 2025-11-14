@@ -11,11 +11,6 @@ try {
     echo 'koneksi gagal'.$e->getMessage();
 };
 
-function addJenjang(array $data){
-    $stmnt=$pdo->prepare("INSERT INTO jenjang (NAMA_JENJANG) VALUES (:NAMA_JENJANG)");
-    $stmnt->bindValue(':NAMA_JENJANG',$data['jenjang']);
-    $stmnt->execute();
-}
 function register(array $data){   
     global $pdo; 
     $stmnt=$pdo->prepare("INSERT INTO akun_siswa (`NAMA_AKUN_SISWA`,`PASSWORD_AKUN_SISWA`,`EMAIL_AKUN_SISWA`)VALUES (:NAMA_SISWA,:PASSWORD,:EMAIL)");

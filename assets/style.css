@@ -42,6 +42,14 @@ a {
   border-radius: 20px;
   font-size: 15px;
 }
+.nav button {
+  padding: 5px 20px;
+  background-color: #2196f3;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+}
+
 .nav button:hover {
   background-color: yellow;
 }
@@ -121,7 +129,7 @@ footer li {
 }
 
 .login button {
-  background-color: #bbdefb;
+  background-color: #2196f3;
   border-radius: 5px;
   width: 130px;
   height: 35px;
@@ -133,7 +141,9 @@ footer li {
 .login p {
   padding: 15px;
 }
-
+/* .login a:hover{
+	color: #1565c0;
+} */
 /* Register */
 
 .register {
@@ -170,7 +180,7 @@ footer li {
 }
 
 .register button {
-  background-color: #bbdefb;
+  background-color: #2196f3;
   border: none;
   border-radius: 5px;
   width: 130px;
@@ -218,6 +228,8 @@ footer li {
 }
 .dashboard button {
   background: #bbdefb;
+
+  background: #2196f3;
   border: none;
   padding: 12px 25px;
   border-radius: 8px;
@@ -236,26 +248,12 @@ footer li {
   font-weight: 600;
   font-size: 2rem;
 }
-/* .dashboard.isi{
-	display: flex;
-	flex-direction: row;
-}
-.dashboard button{
-	padding: 10px;
-	font-size: large;
-	border-radius: 10px;
-	background-color: #BBDEFB;
-} */
 
 .dashboard1 {
   background-color: #fff;
   padding: 40px 20px;
-  /* text-align: center; */
   margin: 0 auto;
   text-align: center;
-  /* display: flex; */
-  /* align-items: center; */
-  /* align-content: center; */
 }
 .dashboard1 p {
   font-size: 25px;
@@ -263,4 +261,55 @@ footer li {
 }
 .dashboard1 ul li {
   font-size: 20px;
+}
+
+.dashboard1 ul li {
+  font-size: 20px;
+}
+
+/* jurusan */
+.jurusan {
+  width: 80%;
+  margin: 40px auto;
+  /* border-radius: 10px; */
+  /* background-color: white; */
+  /* font-family: Arial, sans-serif; */
+}
+.jurusan h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.jurusan table {
+  width: 100%;
+  border-collapse: collapse;
+  /* border-radius: 10px; */
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.jurusan table th,
+.jurusan table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.jurusan table th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+.jurusan button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 5px;
+  /* cursor: pointer; */
+  /* transition: 0.2s; */
+}
+.jurusan > button {
+  display: block;
+  margin: 20px auto;
+  background-color: #4caf50;
 }
