@@ -9,9 +9,10 @@ body {
   color: #212121;
 }
 
-a{
-	text-decoration: none;
-	color: black;}
+a {
+  text-decoration: none;
+  color: black;
+}
 a {
   color: #000;
 }
@@ -28,12 +29,13 @@ a {
   padding-left: 1rem;
 }
 /* navbar */
-.nav button{
-	padding: 5px 20px;
-	background-color: #BBDEFB;
-	border-radius: 10px;
-	font-size: 15px;
-	border: none;
+.nav button {
+  padding: 5px 20px;
+  background-color: #bbdefb;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+}
 .nav button {
   padding: 3px 10px;
   background-color: #bbdefb;
@@ -178,8 +180,9 @@ footer li {
   cursor: pointer;
   margin-top: 15px;
 }
-footer p,footer li{
-	font-size: 0.8rem;
+footer p,
+footer li {
+  font-size: 0.8rem;
 }
 
 /* header */
@@ -187,7 +190,7 @@ footer p,footer li{
 .dashboard {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.612), rgba(0, 0, 0, 0.5)),
-              url('../img/sekolah.jpg') center/cover no-repeat; /* sesuaikan nama file */
+    url("../img/sekolah.jpg") center/cover no-repeat; /* sesuaikan nama file */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,7 +217,7 @@ footer p,footer li{
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 .dashboard button {
-  background: #BBDEFB;
+  background: #bbdefb;
   border: none;
   padding: 12px 25px;
   border-radius: 8px;
@@ -244,20 +247,20 @@ footer p,footer li{
 	background-color: #BBDEFB;
 } */
 
-.dashboard1{
-	background-color: #fff;
-	padding: 40px 20px;
-	/* text-align: center; */
-	margin: 0 auto;
-	text-align: center;
-	/* display: flex; */
-	/* align-items: center; */
-	/* align-content: center; */
+.dashboard1 {
+  background-color: #fff;
+  padding: 40px 20px;
+  /* text-align: center; */
+  margin: 0 auto;
+  text-align: center;
+  /* display: flex; */
+  /* align-items: center; */
+  /* align-content: center; */
 }
-.dashboard1 p{
-	font-size: 25px;
-	font-weight: bold;
+.dashboard1 p {
+  font-size: 25px;
+  font-weight: bold;
 }
-.dashboard1 ul li{
-	font-size: 20px;
+.dashboard1 ul li {
+  font-size: 20px;
 }
