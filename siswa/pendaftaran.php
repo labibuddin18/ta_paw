@@ -12,6 +12,11 @@ require_once "../includes/navbarSiswa.php";
         <hr>
 
         <div class="form_isi">
+            <label for="nisn">NISN :</label>
+            <input type="text" id="nisn" name="nama_siswa">
+        </div>
+
+        <div class="form_isi">
             <label for="nama_lengkap">Nama Lengkap :</label>
             <input type="text" id="nama_lengkap" name="nama_siswa">
         </div>
