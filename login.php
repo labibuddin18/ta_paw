@@ -36,9 +36,7 @@ if (isset($_POST['submit'])) {
 
 <div class="login">
 	<form action="" method="POST">
-        <br>
 			<h1>Login</h1>
-            <br>
             <table>
                 <tr>
                     <td><label for="user">Username</label></td>
@@ -63,7 +61,5 @@ if (isset($_POST['submit'])) {
                     </td>
                 </tr>
             </table>
-            <br>
-
 	</form>
 </div>

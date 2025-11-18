@@ -109,6 +109,7 @@ footer a:href {
   align-items: center;
   background-color: #fff;
   margin: 90px;
+  padding: 40px;
   border-radius: 15px;
   margin-left: 30%;
   margin-right: 30%;
@@ -136,11 +137,13 @@ footer a:href {
 
 .login button {
   background-color: #2196f3;
+  border: none;
   border-radius: 5px;
   width: 130px;
   height: 35px;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
   border: none;
   color: white;
 }
@@ -160,13 +163,13 @@ footer a:href {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  margin: 80px;
+  margin: 90px;
+  padding: 40px;
   border-radius: 15px;
   margin-left: 30%;
   margin-right: 30%;
   box-shadow: 5px 5px 0 0 rgb(160, 160, 160);
 }
-
 .register label {
   text-align: center;
   font-size: 16px;
@@ -196,6 +199,7 @@ footer a:href {
   font-weight: bold;
   cursor: pointer;
   margin-top: 15px;
+  color: white;
 }
 .register a{
   color: #2196f3;

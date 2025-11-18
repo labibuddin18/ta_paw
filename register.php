@@ -5,9 +5,7 @@
 ?>
 <div class="register">
     <form action="" method="POST">
-        <br>
             <h1>Register</h1>
-            <br>
             <table>
                 <tr>
                     <td>
