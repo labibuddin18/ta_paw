@@ -38,49 +38,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <div class="register">
     <form action="" method="POST">
-        <br>
             <h1>Register</h1>
-            <br>
-            <br>
             <table>
                 <tr>
                     <td>
+<<<<<<< HEAD
                         <label for="">Username</label>
+=======
+                        <label for="nama">Nama Lengkap</label>
+>>>>>>> 4f21bb892408fa7f513b9d4be9ea22a9c32a3432
                     </td>
                 </tr>
                 <tr>
                     <td>
+<<<<<<< HEAD
                         <input type="text" name="nama" value="<?php echo htmlspecialchars($nama); ?>"><br>
                         <?php if (!empty($errors['nama'])): ?>
                             <span class="error"><?php echo $errors['nama']; ?></span>
                         <?php endif; ?>
+=======
+                        <input type="text" id="nama" name="nama">
+>>>>>>> 4f21bb892408fa7f513b9d4be9ea22a9c32a3432
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="">Email</label>
+                        <label for="email">Email</label>
                     </td>
                 </tr>
                 <tr>
                     <td>
+<<<<<<< HEAD
                         <input type="text" name="email" value="<?php echo htmlspecialchars($email); ?>"><br>
                         <?php if (!empty($errors['email'])): ?>
                             <span class="error"><?php echo $errors['email']; ?></span>
                         <?php endif; ?>
+=======
+                        <input type="text" id="email" name="email">
+>>>>>>> 4f21bb892408fa7f513b9d4be9ea22a9c32a3432
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label for="">Password</label>
+                        <label for="pass">Password</label>
                     </td>
                 </tr>
                 <tr>
                     <td>
+<<<<<<< HEAD
                         <input type="password" name="pass" value="<?php echo htmlspecialchars($password); ?>"><br>
                         
                         <?php if (!empty($errors['pass'])): ?>
                             <span class="error"><?php echo $errors['pass']; ?></span>
                         <?php endif; ?>
+=======
+                        <input type="text" id="pass" name="pass">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Sudah punya akun ? <a href="login.php">Login</a></p>
+>>>>>>> 4f21bb892408fa7f513b9d4be9ea22a9c32a3432
                     </td>
                 </tr>
                 <tr>
@@ -88,8 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button type="submit" name="submit">Submit</button> 
                     </th> 
                 </tr>
-            </table>
-            <br>
+            </table> 
     </form>
 </div>
 <?php

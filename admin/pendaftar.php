@@ -2,7 +2,7 @@
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
 require_once '../database.php';
-$daftar=admin();
+$daftar=pendaftar();
 ?>
 <div class="pendaftar">
     <div>
@@ -21,7 +21,18 @@ $daftar=admin();
                 <td><?=$row['NAMA_JURUSAN']?></td>
                 <td><?=$row['NAMA_KEBUTUHAN']?></td>
                 <td><?=$row['JENIS_STATUS_SISWA']?></td>
-                <td><button name="lulus"><a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTAR_SISWA']?>&kondisi=lulus">lulus</a></button><button name="gagal"><a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTAR_SISWA']?>&kondisi=gagal">Tidak Lulus</a></button></td>
+                <td>
+                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTAR_SISWA']?>&kondisi=lulus">
+                        <button name="lulus">
+                            lulus
+                        </button>
+                    </a>
+                    <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTAR_SISWA']?>&kondisi=gagal">
+                        <button name="gagal">
+                            Tidak Lulus
+                        </button>
+                    </a>
+                </td>
             </tr>
             <?php endforeach;?>
         </table>

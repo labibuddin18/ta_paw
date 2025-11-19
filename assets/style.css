@@ -38,11 +38,11 @@ a {
   border-radius: 10px;
   font-size: 15px;
   border: none;
+  color: white;
 }
 
 .nav button:hover {
   background-color: #83b3ea;
-  background-color: #bbdefb;
 }
 .nav {
   padding: 0rem 1rem;
@@ -98,6 +98,8 @@ footer a:href {
 .media li {
   color: white;
 }
+/* container */
+
 
 /* Login */
 .login {
@@ -107,6 +109,8 @@ footer a:href {
   align-items: center;
   background-color: #fff;
   margin: 90px;
+  padding: 40px;
+  margin: 50px;
   border-radius: 15px;
   margin-left: 30%;
   margin-right: 30%;
@@ -134,17 +138,22 @@ footer a:href {
 
 .login button {
   background-color: #2196f3;
+  border: none;
   border-radius: 5px;
   width: 130px;
   height: 35px;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
   border: none;
   color: white;
 }
 
 .login p {
   padding: 15px;
+}
+.login a{
+  color: #1565c0;
 }
 
 /* Register */
@@ -155,13 +164,15 @@ footer a:href {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  margin: 80px;
+
+  margin: 90px;
+  padding: 40px;
+  margin: 20px;
   border-radius: 15px;
   margin-left: 30%;
   margin-right: 30%;
   box-shadow: 5px 5px 0 0 rgb(160, 160, 160);
 }
-
 .register label {
   text-align: center;
   font-size: 16px;
@@ -175,11 +186,10 @@ footer a:href {
   padding: 12px;
   height: 35px;
   font-size: 14px;
-  width: 400px;
+  width: 100%;
   box-sizing: border-box;
   margin-top: 3px;
   margin-bottom: 10px;
-  align-items: center;
 }
 
 .register button {
@@ -192,6 +202,10 @@ footer a:href {
   font-weight: bold;
   cursor: pointer;
   margin-top: 15px;
+  color: white;
+}
+.register a{
+  color: #2196f3;
 }
 footer p,
 footer li {
@@ -200,10 +214,13 @@ footer li {
 
 /* header */
 /* dashboard */
+
+
+
 .dashboard {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.612), rgba(0, 0, 0, 0.5)),
-    url("../img/sekolah.jpg") center/cover no-repeat; /* sesuaikan nama file */
+    url("../img/sekolah.jpg") center/cover no-repeat; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -211,8 +228,6 @@ footer li {
   color: #fff;
   text-align: center;
   padding: 40px 20px;
-  /* margin: 40px; */
-  /* border-radius: 10px; */
 }
 .dashboard h1 {
   font-size: 2.8rem;
@@ -230,8 +245,6 @@ footer li {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 .dashboard button {
-  background: #bbdefb;
-
   background: #2196f3;
   border: none;
   padding: 12px 25px;
@@ -244,8 +257,9 @@ footer li {
   color: #6aa7ec;
 }
 
-.dashboard a:hover {
+.dashboard button:hover {
   color: white;
+  background: #bbdefb;
 }
 .dashboard p {
   font-size: 1.1rem;
@@ -259,19 +273,28 @@ footer li {
   font-weight: 600;
   font-size: 2rem;
 }
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  gap: 20px;
 
-.visi {
-  background-color: #fff;
-  padding: 20px 10px;
-  margin: 0 auto;
+}
+.container > div{
+  border-radius: 20px;
+}
+
+.dashboard1{
+  width: 85%;
+  background-color: white;
   text-align: center;
-  padding-left: 10%;
-  padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
 }
 .dashboard1 ol {
-  background-color: #fff;
-  padding: 40px 20px;
-  margin: 0 auto;
   text-align: justify;
   padding-left: 10%;
   padding-right: 10%;
@@ -284,9 +307,6 @@ footer li {
   font-size: 20px;
 }
 
-.dashboard1 h1 {
-  margin: 30px 0px;
-}
 
 /* jurusan */
 .jurusan {
@@ -329,6 +349,9 @@ footer li {
   /* cursor: pointer; */
   /* transition: 0.2s; */
 }
+.jurusan button:hover{
+  background-color: #83b3ea;
+}
 .jurusan > button {
   display: block;
   margin: 20px auto;
@@ -353,7 +376,7 @@ footer li {
 
 .harap_login p {
   display: flex;
-  justify-content: centerx;
+  justify-content: center;
 }
 
 .harap_login a {
@@ -370,18 +393,36 @@ footer li {
 /* Panduan PPDB */
 .backgron_ppdb {
   background-color: #fff;
+  width: 80%;
   padding-bottom: 50px;
   padding-top: 5%;
-}
-.bacgron_ppdb {
-  margin-top: 5%;
-  /* padding: 20px; */
 }
 .judul_tengah {
   text-align: center;
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 30px;
+}
+.panduan_ppdb_tgl {
+  padding: 40px 20px;
+  margin: 0 auto;
+  font-size: larger;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 700px;
+}
+.kolom_panduan_tgl {
+  background-color: #fff;
+  text-align: center;
+  padding: 25px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(216, 214, 214, 0.562);
+  min-height: 150px;
+}
+.bacgron_ppdb {
+  margin-top: 5%;
+  /* padding: 20px; */
 }
 
 .panduan_ppdb {
@@ -394,16 +435,6 @@ footer li {
   gap: 20px;
 }
 
-.panduan_ppdb_tgl {
-  background-color: #fff;
-  padding: 40px 20px;
-  margin: 0 auto;
-  font-size: larger;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 700px;
-}
 
 .kolom_panduan {
   text-align: center;
@@ -412,13 +443,6 @@ footer li {
   box-shadow: 0 4px 6px rgba(164, 164, 164, 0.773);
   min-height: 150px;
   background-color: #ffffff2d;
-}
-.kolom_panduan_tgl {
-  text-align: center;
-  padding: 25px 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(216, 214, 214, 0.562);
-  min-height: 150px;
 }
 
 /* Detail Dokumen PPDB */
@@ -487,7 +511,17 @@ footer li {
   color: white;
   font-weight: bold;
 }
-/* Foom Pendaftaran */
+.pendaftar button {
+  padding: 8px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 5px;
+  /* cursor: pointer; */
+  /* transition: 0.2s; */
+}
+/* Form Pendaftaran */
 .form_pendaftaran {
   font-family: sans-serif;
   display: flex;
@@ -497,7 +531,8 @@ footer li {
   border-radius: 15px;
   box-shadow: 5px 5px 0 0 rgb(160, 160, 160);
   margin: 50px auto;
-  width: 90%;
+  margin: 5% 20%;
+  /* width: 90%; */
   max-width: 1300px;
   padding: 30px;
 }
@@ -530,9 +565,6 @@ footer li {
 }
 
 .form_pendaftaran input[type="text"],
-.form_pendaftaran input[type="email"],
-.form_pendaftaran input[type="date"],
-.form_pendaftaran input[type="number"],
 .form_pendaftaran input[type="file"],
 .form_pendaftaran select {
   padding: 12px;
@@ -605,13 +637,25 @@ footer li {
   margin-right: auto;
 }
 /* admin dashboard */
+.container_admin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 30px;
+}
+.container_admin>h1{
+  color: #1565c0;
+}
 .dashboard_admin {
   display: flex;
   flex-direction: row;
+  /* align-items: center; */
   justify-content: center;
+  /* background-color: white; */
   gap: 5%;
   text-align: center;
-  margin-top: 10%;
+  /* margin-top: 10%; */
 }
 .dashboard_admin div {
   background-color: white;
@@ -637,4 +681,21 @@ footer li {
   padding: 10px; 
   border-radius: 5px; 
   margin-bottom: 15px; 
+}
+.admin_jurusan{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  gap: 20px;
+}
+.admin_jurusan>div{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 150px;
+}
+.admin_jurusan h3{
+  color: #1565c0;
 }

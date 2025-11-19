@@ -1,15 +1,8 @@
 <?php 
 	session_start();
-	// if (!isset($_SESSION['isUser'])) {
-	// 	echo "Harus Login Terlebih Dahulu";
-	// 	echo "<a href='login.php'>login</a>";
-	// 	exit();
-	// }
-
 ?>
 <?php if(!isset($_SESSION['isUser'])): 
-	require_once 'includes/header.php';
-	require_once 'includes/navbar.php';
+	require_once '../includes/header.php';
 	?>
 	<div class="harap_login">
 		<tr>

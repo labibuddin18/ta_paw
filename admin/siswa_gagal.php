@@ -2,7 +2,7 @@
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
 require_once '../database.php';
-$daftar=lulus();
+$daftar=gagal();
 ?>
 <div class="pendaftar">
     <div>

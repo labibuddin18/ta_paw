@@ -60,11 +60,11 @@ if (isset($_POST['submit'])) {
             echo 'calon siswa';
             header('Location: siswa');
         }
-    }else{
-           
-            }
-        }
-       }
+
+
+    }
+}
+}
 
  
  require_once 'includes/header.php';
@@ -75,9 +75,7 @@ if (isset($_POST['submit'])) {
 
 <div class="login">
 	<form action="" method="POST">
-        <br>
 			<h1>Login</h1>
-            <br>
             <table>
                 <tr>
                     <td><label for="user">Username</label></td>
@@ -110,7 +108,5 @@ if (isset($_POST['submit'])) {
                     </td>
                 </tr>
             </table>
-            <br>
-
 	</form>
 </div>

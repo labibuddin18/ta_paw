@@ -2,8 +2,8 @@
 	<ul>
 		<li><a href="index.php">Beranda</a></li>
 		<li><a href="#isi">Profil Sekolah</a></li>
-		<li><a href="#visi">Visi & Misi</a></li>
-		<li><a href="#jadwal">Jadwal Pendaftaran Online
+		<li><a href="#vimisi">Visi & Misi</a></li>
+		<li><a href="#pendaftaran">Jadwal Pendaftaran Online
 		</a></li>
 		<li><a href="#alur">Alur Pndaftaran Online</a></li>
 		<li><a href="#detail">Detial Pendaftaran</a></li>

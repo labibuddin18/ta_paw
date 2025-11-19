@@ -4,13 +4,7 @@ require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
     $id=$_GET["ID_JURUSAN"];
     if ($_SERVER["REQUEST_METHOD"]=="POST") {
-        $stmnt=$pdo->prepare("UPDATE jurusan SET KUOTA_JURUSAN = :KUOTA_JURUSAN WHERE ID_JURUSAN = :id");
-        $stmnt->execute([
-            ":KUOTA_JURUSAN"=>$_POST["KUOTA_JURUSAN"],
-            ":id"=>$id
-        ]);
-
-        header("Location:jurusan.php");
+        edit_kuota($id);
     }
 ?>
 <div>
