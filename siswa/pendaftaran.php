@@ -73,10 +73,17 @@ $kebutuhan=kebutuhan();
         <h2>Kebutuhan Khusus</h2>
         <hr>
         <div class="form_isi">
-            <label for="kebutuhan">Masukan Jika Siswa Memiliki Kebutuhan Khusus :</label>
-            <?php foreach($kebutuhan as $kbth): ?>
-            <input type="checkbox" id="id_kebutuhan" name="kebutuhan" value="<?= $kbth['ID_KEBUTUHAN'] ?>"><span> <?= $kbth['NAMA_KEBUTUHAN'] ?></span>
-            <?php endforeach; ?>
+             <label for="kebutuhan">Masukan Jika Siswa Memiliki Kebutuhan Khusus :</label>
+            <div class="radio-group-horizontal">
+                <?php foreach($kebutuhan as $kbth): ?>
+                <input type="checkbox" id="id_kebutuhan" name="kebutuhan" value="<?= $kbth['ID_KEBUTUHAN'] ?>"><span> <?= $kbth['NAMA_KEBUTUHAN'] ?></span> 
+                <?php endforeach; ?>
+            </div>
+            <br>
+            <div class="form_isi">
+            <label for="kebutuhan">Kebutuhan Lainnya :</label>
+            <input type="text" id="id_kebutuhan" name="kebutuhan">
+        </div>
         </div>
         <h2>Data Dokumen</h2>
         <hr>
@@ -139,14 +146,12 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
             <label>Hubungan Wali :</label>
             <div class="radio-group-horizontal">
-                <input type="radio" id="kandung" name="hubungan" value="Kandung">
-                <label for="kandung">Anak Kandung</label>
-                
-                <input type="radio" id="angkat" name="hubungan" value="Angkat">
-                <label for="angkat">Anak Angkat</label>
-                
-                <input type="radio" id="tiri" name="hubungan" value="Tiri">
-                <label for="tiri">Anak Tiri</label>
+                <select id="gaji_wali" name="slip_gaji">
+                    <option value="">-- Pilih Hubungan --</option>
+                    <option value="1">Anak Kandung</option>
+                    <option value="2">Anak Tiri</option>
+                    <option value="3">Anak Angkat</option>
+                </select>
             </div>
         </div>
         
