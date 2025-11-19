@@ -4,8 +4,7 @@ require_once "../database.php";
 require_once "../cekLogin.inc";
 require_once "../includes/header.php";
 require_once "../includes/navbarSiswa.php";
-<<<<<<< HEAD
-require_once 'validasi.php';
+require_once '../validasi.php';
 
 
 $errors = []; // Wadah untuk menampung error
@@ -52,10 +51,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pesan_sukses = "SELAMAT! Semua data yang Anda masukkan VALID.";
     }
 }
-=======
+
 $jurusan=jurusan();
 $kebutuhan=kebutuhan();
->>>>>>> 4f21bb892408fa7f513b9d4be9ea22a9c32a3432
+
  ?>
 <div class="form_pendaftaran">
     <h1>Form PPDB Sekolah Inklusi</h1>
@@ -66,12 +65,12 @@ $kebutuhan=kebutuhan();
 
         <div class="form_isi">
             <label for="nisn">NISN :</label>
-            <input type="text" id="nisn" name="nama_siswa">
+            <input type="text" id="nisn" name="nama_siswa" placeholder="nisn">
         </div>
 
         <div class="form_isi">
             <label for="nama_lengkap">Nama Lengkap :</label>
-            <input type="text" id="nama_lengkap" name="nama_siswa">
+            <input type="text" id="nama_lengkap" name="nama_siswa" placeholder="nama_lengkap">
         </div>
 
         <div class="form_isi">
@@ -87,27 +86,27 @@ $kebutuhan=kebutuhan();
 
         <div class="form_isi">
             <label>Agama :</label>
-            <input type="text" id="agama" name="agama">
+            <input type="text" id="agama" name="agama" placeholder="agama">
         </div>
         
         <div class="form_isi">
             <label for="tempat_lahir">Tempat Lahir :</label>
-            <input type="text" id="tempat_lahir" name="tempat_lahir">
+            <input type="text" id="tempat_lahir" name="tempat_lahir" placeholder="tempat_lahir">
         </div>
         
         <div class="form_isi">
             <label for="tgl_lahir">Tanggal Lahir :</label>
-            <input type="text" id="tgl_lahir" name="tanggal_lahir">
+            <input type="text" id="tgl_lahir" name="tanggal_lahir" placeholder="tahun-bulan-hari">
         </div>
         
         <div class="form_isi">
             <label for="alamat_siswa">Alamat Siswa :</label>
-            <input type="text" id="alamat_siswa" name="alamat_siswa">
+            <input type="text" id="alamat_siswa" name="alamat_siswa" placeholder="alamta-siswa">
         </div>
         
         <div class="form_isi">
             <label for="hp_siswa">No HP Siswa :</label>
-            <input type="text" id="hp_siswa" name="no_hp_siswa">
+            <input type="text" id="hp_siswa" name="no_hp_siswa" placeholder="no_hp_siswa">
         </div>
 
         <div class="form_isi">
@@ -123,38 +122,42 @@ $kebutuhan=kebutuhan();
         <h2>Kebutuhan Khusus</h2>
         <hr>
         <div class="form_isi">
-            <label for="kebutuhan">Masukan Jika Siswa Memiliki Kebutuhan Khusus :</label>
-            <?php foreach($kebutuhan as $kbth): ?>
-            <input type="checkbox" id="id_kebutuhan" name="kebutuhan" value="<?= $kbth['ID_KEBUTUHAN'] ?>"><span> <?= $kbth['NAMA_KEBUTUHAN'] ?></span>
-            <?php endforeach; ?>
+             <label for="kebutuhan">Masukan Jika Siswa Memiliki Kebutuhan Khusus :</label>
+            <div class="radio-group-horizontal">
+                <?php foreach($kebutuhan as $kbth): ?>
+                <input type="checkbox" id="id_kebutuhan" name="kebutuhan" value="<?= $kbth['ID_KEBUTUHAN'] ?>"><span> <?= $kbth['NAMA_KEBUTUHAN'] ?></span> 
+                <?php endforeach; ?>
+            </div>
+            <br>
+            <div class="form_isi">
+            <label for="kebutuhan">Kebutuhan Lainnya :</label>
+            <input type="text" id="id_kebutuhan" name="kebutuhan" placeholder="lainnya">
+        </div>
         </div>
         <h2>Data Dokumen</h2>
         <hr>
         
         <div class="form_isi">
-            <label for="kk" >Kartu Keluarga : (Max ukuran file 5 mb jpg,png,tiff.)</label>
+            <label for="kk" >Kartu Keluarga :</label>
             <input type="file" 
                 id="pas_foto" 
                 name="kk" 
-                accept=".jpg, .jpeg, .png" 
             >
         </div>
 
         <div class="form_isi">
-            <label for="akta">Akte Kelahiran : (Max ukuran file 5 mb jpg,png,tiff. )</label>
+            <label for="akta">Akte Kelahiran :</label>
             <input type="file" 
                 id="pas_foto" 
                 name="akta" 
-                accept=".jpg, .jpeg, .png" 
             >
         </div>
 
         <div class="form_isi">
-            <label for="ijazah">Ijazah / SKL (Surat keterangan Lulus) : (Max ukuran file 5 mb jpg,png,tiff.)</label>
+            <label for="ijazah">Ijazah / SKL (Surat keterangan Lulus) :</label>
             <input type="file" 
                 id="pas_foto" 
                 name="ijazah" 
-                accept=".jpg, .jpeg, .png" 
             >
         </div>
         
@@ -172,47 +175,34 @@ $kebutuhan=kebutuhan();
 
         <div class="form_isi">
             <label for="nama_wali">Nama Wali :</label>
-            <input type="text" id="nama_wali" name="nama_wali">
-        </div>
-
-        <div class="form_isi">
-            <label>Status Wali (Orang Tua) :</label>
-            <div class="radio-group-horizontal">
-                <input type="radio" id="hidup" name="status_wali" value="Hidup">
-                <label for="hidup">Masih Hidup</label>
-                
-                <input type="radio" id="wafat" name="status_wali" value="Wafat">
-                <label for="wafat">Sudah Tidak Ada</label>
-            </div>
+            <input type="text" id="nama_wali" name="nama_wali" placeholder="nama_lengkap_wali">
         </div>
 
         <div class="form_isi">
             <label>Hubungan Wali :</label>
             <div class="radio-group-horizontal">
-                <input type="radio" id="kandung" name="hubungan" value="Kandung">
-                <label for="kandung">Anak Kandung</label>
-                
-                <input type="radio" id="angkat" name="hubungan" value="Angkat">
-                <label for="angkat">Anak Angkat</label>
-                
-                <input type="radio" id="tiri" name="hubungan" value="Tiri">
-                <label for="tiri">Anak Tiri</label>
+                <select id="gaji_wali" name="hubungan">
+                    <option value="">-- Pilih Hubungan --</option>
+                    <option value="1">Anak Kandung</option>
+                    <option value="2">Anak Tiri</option>
+                    <option value="3">Anak Angkat</option>
+                </select>
             </div>
         </div>
         
         <div class="form_isi">
             <label for="pekerjaan_wali">Pekerjaan Wali :</label>
-            <input type="text" id="pekerjaan_wali" name="pekerjaan_wali">
+            <input type="text" id="pekerjaan_wali" name="pekerjaan_wali" placeholder="pekerjaan_wali">
         </div>
 
         <div class="form_isi">
             <label for="alamat_wali">Alamat Wali :</label>
-            <input type="text" id="alamat_wali" name="alamat_wali">
+            <input type="text" id="alamat_wali" name="alamat_wali" placeholder="alamat_wali">
         </div>
         
         <div class="form_isi">
             <label for="hp_wali">No HP Wali :</label>
-            <input type="text" id="hp_wali" name="no_hp_wali">
+            <input type="text" id="hp_wali" name="no_hp_wali" placeholder="no_hp_wali">
         </div>
         
         <div class="form_isi">
