@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
                     <td><label for="user">Username</label></td>
                 </tr>
                 <tr>    
-                    <td><input type="text" id="user" name="user" value="<?php echo htmlspecialchars($nama); ?>">
+                    <td><input type="text" id="user" name="user" placeholder="___________" value="<?php echo htmlspecialchars($nama); ?>">
                         <?php if (!empty($errors['user'])): ?>
                             <span class="error"><?php echo $errors['user']; ?></span>
                         <?php endif; ?>
@@ -91,7 +91,7 @@ if (isset($_POST['submit'])) {
                     <td><label for="pass">Password</label></td>
                 </tr>
                 <tr>
-                    <td><input type="password" id="pass" name="pass">
+                    <td><input type="password" id="pass" name="pass" placeholder="___________">
                         <?php if (!empty($errors['pass'])): ?>
                             <span class="error"><?php echo $errors['pass']; ?></span>
                         <?php endif; ?>

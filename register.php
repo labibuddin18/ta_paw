@@ -42,46 +42,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <table>
                 <tr>
                     <td>
-                        <label for="">Username</label>
-                        <label for="nama">Nama Lengkap</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" name="nama" value="<?php echo htmlspecialchars($nama); ?>"><br>
+                         <label for="">Username</label>
+                        <input type="text" name="nama" placeholder="___________" value="<?php echo htmlspecialchars($nama); ?>"><br>
                         <?php if (!empty($errors['nama'])): ?>
                             <span class="error"><?php echo $errors['nama']; ?></span>
                         <?php endif; ?>
-                        <input type="text" id="nama" name="nama">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="email">Email</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="text" name="email" value="<?php echo htmlspecialchars($email); ?>"><br>
+                        <input type="text" name="email" placeholder="___________" value="<?php echo htmlspecialchars($email); ?>"><br>
                         <?php if (!empty($errors['email'])): ?>
                             <span class="error"><?php echo $errors['email']; ?></span>
                         <?php endif; ?>
-                        <input type="text" id="email" name="email">
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="pass">Password</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="password" name="pass" value="<?php echo htmlspecialchars($password); ?>"><br>
-                        
+                        <input type="password" name="pass" placeholder="___________" value="<?php echo htmlspecialchars($password); ?>"><br>
                         <?php if (!empty($errors['pass'])): ?>
                             <span class="error"><?php echo $errors['pass']; ?></span>
                         <?php endif; ?>
-                        <input type="text" id="pass" name="pass">
                     </td>
                 </tr>
                 <tr>
