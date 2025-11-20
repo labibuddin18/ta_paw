@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if( $_SESSION['login']!=true){
+if(!isset($_SESSION['login'])){
     require_once '../cekLogin.inc';;
 }
 require_once "../database.php";
