@@ -10,20 +10,18 @@
             </ul>
         </li>
     </ul>
-    <ul class="nav-actions">
+    <!-- <ul class="nav-actions">
         <li><a href="profil_siswa.php"><button>Profil</button></a></li>
         <li><a href="../logout.php"><button>Logout</button></a></li>
     </ul>
-</div>
 	<ul>
 		<li><a href="index.php">Beranda</a></li>
 		<li><a href="#isi">Profil Sekolah</a></li>
 		<li><a href="#vimisi">Visi & Misi</a></li>
-		<li><a href="#pendaftaran">Jadwal Pendaftaran Online
-		</a></li>
+		<li><a href="#pendaftaran">Jadwal Pendaftaran Online</a></li>
 		<li><a href="#alur">Alur Pndaftaran Online</a></li>
 		<li><a href="#detail">Detial Pendaftaran</a></li>
-	</ul>
+	</ul> -->
 	<ul>
 		<li><a href="../siswa/profil_siswa.php"><button>Profil</button></a></li>
 		<li><a href="../logout.php"><button>logout</button></a></li>
