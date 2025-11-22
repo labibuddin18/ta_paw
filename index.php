@@ -1,4 +1,12 @@
 <?php
+session_start();
+?>
+<div class="top-sticky">
+    <?php require_once "includes/header.php"; ?>
+    <?php require_once "includes/navbar.php"; ?>
+</div>
+<?php
+require_once 'database.php';
 // session_start();
 require_once 'includes/header.php';
 require_once 'database.php';

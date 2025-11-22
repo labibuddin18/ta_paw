@@ -32,6 +32,31 @@ a {
 }
 /* navbar */
 
+.nav {
+  padding: 10px 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid blue;
+}
+
+.nav-menu,
+.nav-actions {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* navbar */
+
 .nav button {
   padding: 5px 20px;
   background-color: #2196f3;
@@ -39,11 +64,67 @@ a {
   font-size: 15px;
   border: none;
   color: white;
+  cursor: pointer;
 }
 
 .nav button:hover {
   background-color: #83b3ea;
 }
+
+.top-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff; 
+}
+
+body {
+  margin: 0;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 0;
+  margin: 0;
+
+  min-width: 180px;
+  border-radius: 8px;
+
+  display: none !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+.dropdown-content li {
+  width: 100%;
+  list-style: none;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 10px 16px;
+  white-space: nowrap;
+  color: #000;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block !important;
+}
+
 .nav {
   padding: 0rem 1rem;
   padding-bottom: 1rem;
@@ -832,6 +913,105 @@ td {
   width: 100%;
 }
 
+.kebutuhan {
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --header-navbar-height: 100px;
+}
+
+.profile-wrapper {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: calc(100vh - var(--header-navbar-height)) !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  padding: 30px 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Foto bulat di tengah */
+.avatar-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 600;
+}
+
+/* Text di bawah foto */
+.profile-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.profile-email {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.profile-password {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+/* Tombol */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-link {
+  padding: 6px 16px;
+  border-radius: 6px;
+  background: #2196f3;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  border: none;
+}
+
+.btn-link:hover {
+  opacity: 0.85;
+}
+
+.btn-danger {
+  background: #c62828;
+}
 .kebutuhan {
   display: flex;
   flex-direction: column;
