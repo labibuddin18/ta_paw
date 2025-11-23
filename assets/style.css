@@ -40,7 +40,11 @@ a {
   align-items: center;
   border-bottom: 1px solid blue;
 }
-
+.nav div{
+  display: flex;
+  flex-direction: row ;
+  gap: 10rem;
+}
 .nav-menu,
 .nav-actions {
   display: flex;
@@ -55,7 +59,6 @@ a {
   text-decoration: none;
 }
 
-/* navbar */
 
 .nav button {
   padding: 5px 20px;
