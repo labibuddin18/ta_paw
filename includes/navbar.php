@@ -1,5 +1,4 @@
 <div class="nav">
-<<<<<<< HEAD
     <!-- KIRI: Beranda + dropdown -->
     <ul class="nav-menu">
         <li class="dropdown">
