@@ -12,7 +12,7 @@
 
         $nama_jurusan = $_POST["nama_jurusan"];
         val_required($errors,"nama_j",$nama_jurusan,"Nama jurusan wajib diisi.");
-        val_alpha($errors,"nama_j",$nama_jurusan,"Nama jurusan hanya boleh mengandung huruf dan spasi.");
+        val_alphanumeric($errors,"nama_j",$nama_jurusan,"Nama jurusan harus berupa huruf dan angka.");
 
         $kuota = $_POST["kuota"];
         val_required($errors,"kuota",$kuota,"Kuota wajib diisi.");

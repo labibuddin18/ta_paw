@@ -14,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // validasi username dan password
     val_required($errors, 'user', $nama, 'Username wajib diisi.');
     val_required($errors, 'pass', $password, 'Password wajib diisi.');
+    // pengecekan session
     if (empty($errors)) {
         $data = login($nama, $password);
         if ($data) {
-            $_SESSION['login'] = true;
             $_SESSION['ID_USER'] = $data['ID'];
             if ($data['ket'] == 0) {
                 $_SESSION['isAdmin'] = true;
