@@ -9,6 +9,6 @@
 <body>
 	<header>
 		<div class="header">
-			<a href="index.php" class="logo"><b>Sekolah <span>Inklusi</b></span></a>
+			<a href="index.php" class="logo"><b>Sekolah<span> Bhakti Wiyata</b></span></a>
 		</div>
 	</header>
