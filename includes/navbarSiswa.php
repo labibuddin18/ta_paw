@@ -15,7 +15,7 @@
             <li class="dropdown">
             <a href="../siswa/index.php" class="nav-link">Dashboard Siswa ▾</a>
             <ul class="dropdown-content">
-                <li><a href="#vimisi">Jurusan</a></li>
+                <li><a href="../siswa/jurusan_siswa.php">Jurusan</a></li>
                 <li><a href="../siswa/riwayat_pendaftaran.php">Riwayat Pendaftaran</a></li>
             </ul>
             </li>
