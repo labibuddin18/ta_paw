@@ -44,7 +44,7 @@
                     <button type="submit">Tambah</button>
                 </td>
                 <td>
-                    <a href="kebutuhan.php"><button>Kembali</button></a>
+                    <a href="kebutuhan.php">Kembali</a>
                 </td>
             </tr>
         </table>

@@ -58,7 +58,7 @@
                     <button type="submit">Tambah</button>
                 </td>
                 <td>
-                    <a href="jurusan.php"><button>Kembali</button></a>
+                    <a href="jurusan.php">Kembali</a>
                 </td>
             </tr>
         </table>

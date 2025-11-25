@@ -35,7 +35,7 @@ require_once '../includes/navbarAdmin.php';
                     <button type="submit">Edit</button>
                 </td>
                 <td>
-                    <a href="jurusan.php"><button>kembali</button></a>
+                    <a href="jurusan.php">kembali</a>
                 </td>
             </tr>
         </table>
