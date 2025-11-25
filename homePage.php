@@ -1,7 +1,7 @@
 <div class="dashboard" id="isi">
-	<h1>Sekolah Bhakti Wiyata</h1>
+	<h1>SMA Bhakti Wiyata</h1>
 	<div class="isi">
-		<p>Sekolah Bhakti Wiyata merupakan sekolah yang menerapkan pendidikan inklusif, 
+		<p>SMA Bhakti Wiyata merupakan sekolah yang menerapkan pendidikan inklusif, 
 			di mana setiap anak baik anak reguler maupun anak berkebutuhan khusus memiliki hak yang sama 
 			untuk mendapatkan pendidikan yang layak, bermutu, dan ramah terhadap keberagaman.</p><br>
 		<p>Sekolah ini berkomitmen untuk menciptakan lingkungan belajar yang inklusif, aman, dan menyenangkan. 
@@ -27,11 +27,11 @@
 		<div class="panduan_ppdb_tgl">
 			<div class="kolom_panduan_tgl">
 				<h3>Gelombang 1</h3>
-				<p>[Tgl Awal Gel 1] - [Tgl Akhir Gel 1] Prioritas untuk calon siswa yang memerlukan asesmen khusus dan rekomendasi cepat.</p>
+				<p>[ 15 Mei 2026 ] - [ 22 Mei 2026 ] Prioritas untuk calon siswa yang memerlukan asesmen khusus dan rekomendasi cepat.</p>
 			</div>
 			<div class="kolom_panduan_tgl">
 				<h3>Gelombang 2</h3>
-				<p>[Tgl Awal Gel 2] - [Tgl Akhir Gel 2] Kesempatan kedua, dibuka berdasarkan sisa kuota yang tersedia setelah Gelombang 1.</p>
+				<p>[ 7 Juni 2026 ] - [ 14 Juni 2026 ] Kesempatan kedua, dibuka berdasarkan sisa kuota yang tersedia setelah Gelombang 1.</p>
 			</div>
 		</div>
 	</div>
