@@ -9,15 +9,15 @@
 			</div>
 			<div class="kontak">
 				<h3>Kontak Kami</h3>
-				<p>Alamat: Jl. Merdeka No. 45, Sidoarjo, Jawa Timur</p>
+				<p>Alamat: Jl. Maju Mundur No. 45, Surabaya, Jawa Timur</p>
 				<p>Telepon: (031) 123-4567</p>
-				<p>Email: info@smkinklusi.sch.id</p>
+				<p>Email: smabhaktiwhiyata@smainklusi.sch.id</p>
 				<p>Jam Layanan:Senin–Jumat: 07.00–15.00 WIB</p>
 			</div>
 			<div class="media">
 				<h3>Ikuti Kami</h3>
 				<ul>
-					<li><a href="https://www.instagram.com/denny_caknan/">Instagram</a></li>
+					<li><a href="">Instagram</a></li>
 					<li><a href="">Facebook</a></li>
 					<li><a href="">Twiter</a></li>
 				</ul>
