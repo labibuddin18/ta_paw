@@ -20,6 +20,12 @@ function val_alpha(&$errors, $field_name, $value, $message) {
 }
 //validasi pengecekan inputan user berupa huruf dan angka
 function val_alphanumeric(&$errors, $field_name, $value, $message) {
+    if (!empty(trim($value)) && !preg_match("/^[a-zA-Z0-9 ]+$/",$value)) {
+        $errors[$field_name] = $message;
+    }
+}
+//validasi pengecekan inputan user berupa alamat
+function val_alamat(&$errors, $field_name, $value, $message) {
     if (!empty(trim($value)) && !preg_match("/^[a-zA-Z0-9 \.\,]+$/",$value)) {
         $errors[$field_name] = $message;
     }

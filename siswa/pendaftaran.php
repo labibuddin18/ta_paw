@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
      //validasi Aalamat(wajib diisi berupa huruf angka)
     val_required($errors, 'alamat_siswa', $alamat_siswa, 'Alamat Siswa wajib diisi.');
-    val_alphanumeric($errors, 'alamat_siswa', $alamat_siswa, 'Alamat harus berupa huruf dan spasi.'); 
+    val_alamat($errors, 'alamat_siswa', $alamat_siswa, 'Alamat harus berupa huruf dan angka.'); 
 
      //validasi jurusan(wajib diisi)
     val_required($errors, 'id_jurusan', $id_jurusan, 'Jurusan wajib dipilih.');
@@ -104,29 +104,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //validasi ayah(wajib diisi berupa numeric)
     val_required($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah wajib diisi.');
     val_alpha($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah harus berupa huruf dan spasi.'); 
+    
+    //validasi keadaan ayah (wajib diisi berupa numeric)
+    val_required($errors, 'keadaan_ayah', $keadaan_ayah, 'Keadaan Ayah wajib diisi.');
 
     //validasi No hp ortu(wajib diisi berupa numeric)
     if (!empty($no_hp_ayah)) {
         val_numeric($errors, 'no_hp_ayah', $no_hp_ayah, 'No Hp harus berupa angka.');
         val_exact_length($errors, 'no_hp_ayah', $no_hp_ayah, 12, 'No Hp harus 12 digit.');
     }
+    // validasi alamat ayah (berupa huruf dan angka)
+    if (!empty($alamat_ayah)) {
+        val_alamat($errors, 'alamat_ayah', $alamat_ayah, 'Alamat Ayah harus berupa huruf dan angka.'); 
+    }
+    // validasi pekerjaan ayah (berupa huruf)
+    if (!empty($pekerjaan_ayah)) {
+        val_alpha($errors, 'pekerjaan_ayah', $pekerjaan_ayah, 'Pekerjaan Ayah harus berupa huruf dan spasi.'); 
+    }
 
-    //validasi keadaan ayah (wajib diisi berupa numeric)
-    val_required($errors, 'keadaan_ayah', $keadaan_ayah, 'Keadaan Ayah wajib diisi.');
 
     //validasi ibu siswa(wajib diisi berupa huruf)
     val_required($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu wajib diisi.');
     val_alpha($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu harus berupa huruf dan spasi.'); 
+    
+    //validasi keadaan ibu(wajib diisi berupa huruf)
+    val_required($errors, 'keadaan_ibu', $keadaan_ibu, 'Keadaan Ibu wajib diisi.');
 
        //validasi No hp ortu(wajib diisi berupa numeric)
     if (!empty($no_hp_ibu)) {
         val_numeric($errors, 'no_hp_ibu', $no_hp_ibu, 'No Hp harus berupa angka.');
         val_exact_length($errors, 'no_hp_ibu', $no_hp_ibu, 12, 'No Hp harus 12 digit.');
     }
+    // validasi alamat ibu (berupa huruf dan angka)
+    if (!empty($alamat_ibu)) {
+        val_alamat($errors, 'alamat_ibu', $alamat_ibu, 'Alamat Ibu harus berupa huruf dan angka.'); 
+    }
+    // validasi pekerjaan ibu (berupa huruf)
+    if (!empty($pekerjaan_ibu)) {
+        val_alpha($errors, 'pekerjaan_ibu', $pekerjaan_ibu, 'Pekerjaan Ibu harus berupa huruf dan spasi.'); 
+    }
 
-
-    //validasi keadaan ibu(wajib diisi berupa huruf)
-    val_required($errors, 'keadaan_ibu', $keadaan_ibu, 'Keadaan Ibu wajib diisi.');
 
     //validasi files(wajib diisi dan menerima file jpg,jpeg,png dan pdf dengan ukuran 2 mb)
     val_file($errors,'kk',$_FILES['kk'],['jpg', 'jpeg', 'png', 'pdf'],2,'Format file tidak didukung.');
@@ -275,7 +292,6 @@ $kebutuhan=kebutuhan();
             <?php if (!empty($history_kk)): ?>
                 <p>Dipilih: <b><?= htmlspecialchars($history_kk) ?></b></p>
             <?php endif; ?>
-            <p>Penamaan file = nim</p>
         </div>
         
         <div class="form_isi">
@@ -287,7 +303,7 @@ $kebutuhan=kebutuhan();
                 <?php if (!empty($history_akte)): ?>
                     <p>Dipilih: <b><?= htmlspecialchars($history_akte) ?></b></p>
                 <?php endif; ?>
-                <p>Penamaan file = nim</p>
+
         </div>
                 
             <div class="form_isi">
@@ -299,7 +315,6 @@ $kebutuhan=kebutuhan();
                 <?php if (!empty($history_ijazah)): ?>
                     <p>Dipilih: <b><?= htmlspecialchars($history_ijazah) ?></b></p>
                  <?php endif; ?>
-            <p>Penamaan file = nim</p>
         </div>
         
         <div class="form_isi">
@@ -311,7 +326,6 @@ $kebutuhan=kebutuhan();
             <?php if (!empty($history_foto)): ?>
                 <p>Dipilih: <b><?= htmlspecialchars($history_foto) ?></b></p>
             <?php endif; ?>
-            <p>Penamaan file = nim</p>
         </div>
         <h2>Data Ayah & Ibu</h2>
         <hr>
@@ -340,6 +354,7 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
             <label for="alamat_ayah">Alamat Ayah :</label>
             <input type="text" id="alamat_ayah" name="alamat_ayah" placeholder="Alamat Ayah" value="<?= $alamat_ayah?>">
+            <span class="error"><?= $errors['alamat_ayah'] ?? "" ?></span>
         </div>
 
         <div class="form_isi">
@@ -353,6 +368,7 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
             <label for="pekerjaan_ayah">Pekerjaan Ayah :</label>
             <input type="text" id="pekerjaan_ayah" name="pekerjaan_ayah" placeholder="Pekerjaan Ayah" value="<?= $pekerjaan_ayah?>">
+            <span class="error"><?= $errors["pekerjaan_ayah"] ?? "" ?></span>
         </div>
 
         <div class="form_isi">
@@ -405,6 +421,7 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
             <label for="alamat_ibu">Alamat Ibu :</label>
             <input type="text" id="alamat_ibu" name="alamat_ibu" placeholder="Alamat Ibu" value="<?= $alamat_ibu?>">
+            <span class="error"><?= $errors['alamat_ibu'] ?? "" ?></span>
         </div>
 
         <div class="form_isi">
@@ -418,6 +435,7 @@ $kebutuhan=kebutuhan();
         <div class="form_isi">
             <label for="pekerjaan_ibu">Pekerjaan Ibu :</label>
             <input type="text" id="pekerjaan_ibu" name="pekerjaan_ibu" placeholder="Pekerjaan Ibu" value="<?= $pekerjaan_ibu?>">
+            <span class="error"><?= $errors["pekerjaan_ibu"] ?? "" ?></span>
         </div>
 
         <div class="form_isi">
