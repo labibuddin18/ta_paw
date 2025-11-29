@@ -210,14 +210,30 @@ function proses_pendaftaran( array $data,$file){
             ':NO_HP_IBU'=>$_POST['no_hp_ibu'],
             ':PEKERJAAN_IBU'=>$_POST['pekerjaan_ibu'],
             ':GAJI_IBU'=>$_POST['gaji_ibu'] === "" ? null : $_POST['gaji_ibu']
-        ]);
-        $lastIdPendaftar=lastInsertId();
-        $stmnt2=$pdo->prepare
-        ("INSERT INTO kebutuhan_pendaftaran (ID_PENDAFTARAN,ID_KEBUTUHAN) 
-        VALUES (:ID_PENDAFTARAN,:ID_KEBUTUHAN)");
-        $stmnt2->execute([
-            ':ID_PENDAFTARAN'=>$lastIdPendaftar['ID_PENDAFTARAN'],
-            ':ID_KEBUTUHAN'=>isset($_POST['kebutuhan']) ? $_POST['kebutuhan'] : "1"
-        ]);
+            ]);
+            $lastIdPendaftar = lastInsertId();
+
+            if (isset($_POST['kebutuhan'])) {
+                foreach ($_POST['kebutuhan'] as $idKebutuhan) {
+                    $stmnt2 = $pdo->prepare("
+                        INSERT INTO kebutuhan_pendaftaran (ID_PENDAFTARAN, ID_KEBUTUHAN)
+                        VALUES (:ID_PENDAFTARAN, :ID_KEBUTUHAN)
+                    ");
+                    $stmnt2->execute([
+                        ':ID_PENDAFTARAN' => $lastIdPendaftar["ID_PENDAFTARAN"],
+                        ':ID_KEBUTUHAN' => $idKebutuhan
+                    ]);
+                }
+            } else {
+                // Jika tidak memilih kebutuhan sama sekali
+                $stmnt2 = $pdo->prepare("
+                    INSERT INTO kebutuhan_pendaftaran (ID_PENDAFTARAN, ID_KEBUTUHAN)
+                    VALUES (:ID_PENDAFTARAN, :ID_KEBUTUHAN)
+                ");
+                $stmnt2->execute([
+                    ':ID_PENDAFTARAN' => $lastIdPendaftar["ID_PENDAFTARAN"],
+                    ':ID_KEBUTUHAN' => 1
+                ]);
+            }
     }
 }
