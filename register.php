@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
 
     // validasi nama
-    val_required($errors, 'nama', $nama, 'Nama wajib diisi.');
-    val_alpha($errors, 'nama', $nama, 'Nama harus berupa huruf dan spasi.');
+    val_required($errors, 'nama', $nama, 'Username wajib diisi.');
+    val_alphanumeric($errors, 'nama', $nama, 'Username harus berupa huruf dan angka.');
 
     // validasi password
     val_required($errors, 'pass', $password, 'Password wajib diisi.');
