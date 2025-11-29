@@ -15,11 +15,12 @@ require_once "../database.php";
 
 <?php
 $stmt = $pdo->prepare("
-    SELECT p.*, j.NAMA_JURUSAN,GROUP_CONCAT(k.NAMA_KEBUTUHAN SEPARATOR ',') NAMA_KEBUTUHAN
+    SELECT p.*, j.NAMA_JURUSAN,GROUP_CONCAT(k.NAMA_KEBUTUHAN SEPARATOR ',') NAMA_KEBUTUHAN, KET_STATUS
     FROM pendaftaran p
     JOIN jurusan j ON j.ID_JURUSAN = p.ID_JURUSAN
     JOIN kebutuhan_pendaftaran kp ON kp.ID_PENDAFTARAN = p.ID_PENDAFTARAN
     JOIN kebutuhan k ON k.ID_KEBUTUHAN = kp.ID_KEBUTUHAN
+    JOIN status s ON s.ID_STATUS = p.ID_STATUS
     WHERE p.ID_SISWA = :id
     GROUP BY p.ID_PENDAFTARAN
 ");
@@ -46,7 +47,7 @@ exit();
 
 <?php foreach ($list as $r): ?>
 <div class="riwayat_pendaftaran">
-    <h2>Riwayat Pendaftaran</h2>
+    <h2>Riwayat Pendaftaran <span class="status_pendaftaran"><?= e($r['KET_STATUS']) ?></span></h2>
 
     <div class="rp_label">Nama Lengkap</div>
     <div class="rp_h

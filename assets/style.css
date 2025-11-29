@@ -1150,6 +1150,12 @@ footer li {
 .riwayat_pendaftaran h2 {
   color: #007bff;
   border-bottom: 2px solid #007bff;
+  margin-bottom: 15px;
+  gap: 400px;
+  display: flex;
+}
+
+.riwayat_pendaftaran h2 .status_pendaftaran {
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -1631,4 +1637,35 @@ button[type="submit"].btn-link:hover {
   background-color: #2196f3;
   color: white;
   font-weight: bold;
+}
+
+/* pendaftran Selesai */
+.pendaftran_selesai {
+  font-family: sans-serif;
+  align-items: center;
+  background-color: #fff;
+  margin: 75px;
+  border-radius: 15px;
+  margin-left: 25%;
+  margin-right: 25%;
+  box-shadow: 5px 5px 0 0 rgb(160, 160, 160);
+  padding: 40px;
+  text-align: center;
+}
+
+.pendaftran_selesai p {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pendaftran_selesai a {
+  color: #006ff6;
+  font-weight: bold;
+}
+
+.pendaftran_selesai h2 {
+  color: #1565c0;
+  display: flex;
+  justify-content: center;
 }
