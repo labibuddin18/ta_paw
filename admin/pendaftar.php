@@ -1,8 +1,11 @@
 <!-- halaman untuk menampilkan pendaftar -->
 <?php
+// Mengecek apakah admin sudah login
 require_once 'cekLoginAdmin.php';
+// Header dan Navbar admin
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
+// Koneksi ke database dan fungsi
 require_once '../database.php';
 $daftar=pendaftar();
 ?>
@@ -36,10 +39,10 @@ $daftar=pendaftar();
                 <td><?=$row['KET_STATUS']?></td>
                 <td>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=lulus" class="btn_a">
-                            Lulus
+                            Lolos
                     </a>
                     <a href="edit_status.php?ID_PENDAFTARAN=<?=$row['ID_PENDAFTARAN']?>&kondisi=gagal" class="btn_a hapus">
-                            Tidak Lulus
+                            Tidak Lolos
                     </a>
                 </td>
             </tr>
