@@ -26,7 +26,7 @@
             <td><?= $data['NAMA_JURUSAN'] ?></td>
             <td><?= $data['KUOTA_JURUSAN'] ?></td>
             <td>
-                <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>&KUOTA_JURUSAN=<?=$data['KUOTA_JURUSAN']?>" class="btn_a">
+                <a href="edit_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>&KUOTA_JURUSAN=<?=$data['KUOTA_JURUSAN']?>&NAMA_JURUSAN=<?=$data['NAMA_JURUSAN']?>" class="btn_a">
                     Edit
                 </a>
                 <a href="kh_jurusan.php?ID_JURUSAN=<?=$data['ID_JURUSAN']?>" class="btn_a hapus">

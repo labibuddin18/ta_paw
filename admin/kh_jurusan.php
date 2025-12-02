@@ -9,7 +9,7 @@
     $stmnt->execute([
       ':ID_JURUSAN'=>$id_jurusan
     ]);
-    $jurusan=$stmnt->fetch(); 
+    $jurusan=$stmnt->fetch();
 
 // pengecekan jika ada siswa yang terdaftar di jurusan maka tidak bisa di hapus jurusannya
 
