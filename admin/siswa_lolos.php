@@ -1,9 +1,9 @@
 <?php
 require_once 'cekLoginAdmin.php';
-require_once '../includes/header.php';
-require_once '../includes/navbarAdmin.php';
 require_once '../database.php';
 $daftar=lulus();
+require_once '../includes/header.php';
+require_once '../includes/navbarAdmin.php';
 ?>
 <div class="pendaftar">
     <div>

@@ -1,9 +1,9 @@
 <?php
     require_once 'cekLoginAdmin.php';
     require_once '../database.php';
+    $kebutuhan=kebutuhan();
     require_once '../includes/header.php';
     require_once '../includes/navbarAdmin.php';
-    $kebutuhan=kebutuhan();
 ?>
 <div class="kebutuhan">
     <div>

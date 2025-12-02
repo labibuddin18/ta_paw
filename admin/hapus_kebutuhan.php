@@ -2,14 +2,11 @@
 require_once "../database.php";
 // Mengecek apakah admin sudah login
 require_once 'cekLoginAdmin.php';
-// Header dan navbar admin
-require_once '../includes/header.php';
-require_once '../includes/navbarAdmin.php';
 //Koneksi ke database dan fungsi
 if (isset($_GET["ID_KEBUTUHAN"])) {
     $id=$_GET["ID_KEBUTUHAN"];
-        $stmnt=$pdo->prepare("DELETE FROM kebutuhan WHERE ID_KEBUTUHAN=:id");
-        $stmnt->bindValue(':id',$id);
+    $stmnt=$pdo->prepare("DELETE FROM kebutuhan WHERE ID_KEBUTUHAN=:id");
+    $stmnt->bindValue(':id',$id);
         $stmnt->execute();
     header("Location:kebutuhan.php");
 }
@@ -31,14 +28,17 @@ $nama = $stm->fetchColumn();
 
 // Jika admin menekan tombol "Ya, hapus"
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
+    
     $stmnt = $pdo->prepare("DELETE FROM kebutuhan WHERE ID_KEBUTUHAN = :id");
     $stmnt->bindValue(':id', $id);
     $stmnt->execute();
-
+    
     header("Location: kebutuhan.php");
     exit;
 }
+// Header dan navbar admin
+require_once '../includes/header.php';
+require_once '../includes/navbarAdmin.php';
 ?>
 <h2>Konfirmasi Hapus</h2>
 <p>Apakah Anda yakin ingin menghapus kebutuhan <b><?= htmlspecialchars($nama) ?></b>?</p>

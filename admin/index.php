@@ -1,12 +1,12 @@
 <?php
 require_once 'cekLoginAdmin.php';
-require_once '../includes/header.php';
-require_once '../includes/navbarAdmin.php';
 require_once '../database.php';
 $lolos=lulus();
 $gagal=gagal();
 $pendaftar=siswa_daftar();
 $jurusan=jurusan();
+require_once '../includes/header.php';
+require_once '../includes/navbarAdmin.php';
 ?>
 <div class="container_admin">
     <h1>Informasi Siswa</h1>

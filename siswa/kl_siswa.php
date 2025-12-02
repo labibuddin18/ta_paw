@@ -1,9 +1,7 @@
 <?php
     require_once 'cekLoginSiswa.php';
     require_once '../database.php';
-    require_once '../includes/header.php';
-    require_once '../includes/navbarSiswa.php';
-
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (isset($_POST['keluar'])){
             session_destroy();
@@ -14,6 +12,8 @@
             exit();
         }
     }
+    require_once '../includes/header.php';
+    require_once '../includes/navbarSiswa.php';
 ?>
 <div class="kl_S">
     <div>

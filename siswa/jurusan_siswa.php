@@ -4,9 +4,9 @@
 // Koneksi database dan fungsi
     require_once '../database.php';
 // Header & navbar siswa
-    require_once '../includes/header.php';
-    require_once '../includes/navbarSiswa.php';
-    $jurusan=jurusan();
+$jurusan=jurusan();
+require_once '../includes/header.php';
+require_once '../includes/navbarSiswa.php';
 ?>
 <div class="jurusan_siswa">
     <h1>Daftar Jurusan SMA Bakti Wiyata</h1>

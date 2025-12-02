@@ -1,8 +1,6 @@
 <?php
     require_once 'cekLoginAdmin.php';
     require_once '../database.php';
-    require_once '../includes/header.php';
-    require_once '../includes/navbarAdmin.php';
     $id_jurusan=$_GET['ID_JURUSAN'];
     
     $stmnt=$pdo->prepare("SELECT NAMA_JURUSAN FROM jurusan WHERE ID_JURUSAN = :ID_JURUSAN");
@@ -11,16 +9,19 @@
     ]);
     $jurusan=$stmnt->fetch();
 
-// pengecekan jika ada siswa yang terdaftar di jurusan maka tidak bisa di hapus jurusannya
-
+    // pengecekan jika ada siswa yang terdaftar di jurusan maka tidak bisa di hapus jurusannya
+    
     $stmnt2=$pdo->prepare("SELECT ID_PENDAFTARAN FROM pendaftaran WHERE ID_JURUSAN = :ID_JURUSAN");
     $stmnt2->execute([
       ':ID_JURUSAN'=>$id_jurusan
     ]);
     
     $jumlah=$stmnt2->rowCount();
+    require_once '../includes/header.php';
+    require_once '../includes/navbarAdmin.php';?>
+    <?php
     if ($jumlah > 0):
-?>
+      ?>
 <div class="kh_kebutuhan">
   <div>
       <h1>Ada Siswa Mendaftar Jurusan Ini ?</h1>

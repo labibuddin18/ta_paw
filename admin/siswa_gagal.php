@@ -3,11 +3,11 @@
 require_once '../database.php';
 // Mengecek apakah admin sudah login
 require_once 'cekLoginAdmin.php';
+// Koneksi ke databse
+$daftar=gagal();
 // header dan navbar admin
 require_once '../includes/header.php';
 require_once '../includes/navbarAdmin.php';
-// Koneksi ke databse
-$daftar=gagal();
 ?>
 <div class="pendaftar">
     <div>

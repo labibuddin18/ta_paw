@@ -2,8 +2,6 @@
  require_once 'cekLoginSiswa.php';
  require_once "../database.php";
 // require_once "../cekLogin.inc";
-require_once "../includes/header.php";
-require_once "../includes/navbarSiswa.php";
 require_once '../validasi.php';
 
 
@@ -16,23 +14,23 @@ $history_kk= '';
 $history_akte= '';
 $history_ijazah= '';
 $history_foto= '';
- if (!empty($_FILES['kk']['name'])) {
+if (!empty($_FILES['kk']['name'])) {
         $history_kk = $_FILES['kk']['name'];
     }
-if (!empty($_FILES['akte']['name'])) {
+    if (!empty($_FILES['akte']['name'])) {
         $history_akte = $_FILES['akte']['name'];
     }
- if (!empty($_FILES['ijazah']['name'])) {
+    if (!empty($_FILES['ijazah']['name'])) {
         $history_ijazah = $_FILES['ijazah']['name'];
     }
-if (!empty($_FILES['foto']['name'])) {
+    if (!empty($_FILES['foto']['name'])) {
         $history_foto = $_FILES['foto']['name'];
     }
-
-// validasi form pendaftaran siswa 
-$nama_siswa = htmlspecialchars( $_POST['nama_siswa'] ?? '');
-$nisn = htmlspecialchars( $_POST['nisn'] ?? '');
-$jenis_kelamin = htmlspecialchars( $_POST['jenis_kelamin'] ?? '');
+    
+    // validasi form pendaftaran siswa 
+    $nama_siswa = htmlspecialchars( $_POST['nama_siswa'] ?? '');
+    $nisn = htmlspecialchars( $_POST['nisn'] ?? '');
+    $jenis_kelamin = htmlspecialchars( $_POST['jenis_kelamin'] ?? '');
 $agama = htmlspecialchars( $_POST['agama'] ?? '');
 $tgl_lahir = htmlspecialchars( $_POST['tanggal_lahir'] ?? '');
 $tempat_lahir = htmlspecialchars( $_POST['tempat_lahir'] ?? '');
@@ -56,17 +54,17 @@ $pekerjaan_ibu = htmlspecialchars( $_POST['pekerjaan_ibu'] ?? '');
 $gaji_ibu = htmlspecialchars( $_POST['gaji_ibu'] ?? '');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-
+    
+    
     $file_kk = $_FILES['kk']['name'] ?? null;
     $file_akte = $_FILES['akte']['name'] ?? null;
     $file_ijazah = $_FILES['ijazah']['name'] ?? null;
     $file_foto = $_FILES['foto']['name'] ?? null;
-
+    
     // validasi nama(wajib diisi,berupa huruf)
     val_required($errors, 'nama_siswa', $nama_siswa, 'Nama Siswa wajib diisi.');
     val_alpha($errors, 'nama_siswa', $nama_siswa, 'Nama Siswa harus berupa huruf dan spasi.'); 
-
+    
     //validasi nisn(wajib diisi, berupa numeric dan harus 10 digit)
     val_required($errors, 'nisn', $nisn, 'NISN wajib diisi.');
     if (!isset($errors['nisn'])) {
@@ -75,14 +73,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($errors['nisn'])) {
         val_exact_length($errors, 'nisn', $nisn, 10, 'NISN harus 10 digit.');
     }
-
+    
     //validasi jenis kelamin(wajib diisi)
     val_required($errors, 'jenis_kelamin', $jenis_kelamin, 'Jenis Kelamin wajib dipilih.');
-
+    
     //validasi agama(harus diisi dan berupa huruf)
     val_required($errors, 'agama', $agama, 'Agama wajib dipilih.');
     val_alpha($errors, 'agama', $agama, 'Agama harus berupa huruf dan spasi.'); 
-
+    
     //validasi tanggal(wajib diisi dengan format Year Month Day) 
     val_required($errors, 'tanggal_lahir', $tgl_lahir, 'Tanggal Lahir wajib diisi.');
     val_date_format($errors, 'tanggal_lahir', $tgl_lahir, 'Y-m-d', 'Tanggal Lahir harus dalam format YYYY-MM-DD.');
@@ -90,25 +88,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //validasi tempat lahir(wajib diisi beerupa huruf)
     val_required($errors, 'tempat_lahir', $tempat_lahir, 'Tempat Lahir wajib diisi.');
     val_alpha($errors, 'tempat_lahir', $tempat_lahir, 'Tempat Lahir harus berupa huruf dan spasi.'); 
-
-     //validasi Aalamat(wajib diisi berupa huruf angka)
+    
+    //validasi Aalamat(wajib diisi berupa huruf angka)
     val_required($errors, 'alamat_siswa', $alamat_siswa, 'Alamat Siswa wajib diisi.');
     val_alamat($errors, 'alamat_siswa', $alamat_siswa, 'Alamat harus berupa huruf dan angka.'); 
 
      //validasi jurusan(wajib diisi)
-    val_required($errors, 'id_jurusan', $id_jurusan, 'Jurusan wajib dipilih.');
-
+     val_required($errors, 'id_jurusan', $id_jurusan, 'Jurusan wajib dipilih.');
+     
      //validasi no hp siswa(wajib diisi berupa numeric)
     val_required($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa wajib diisi.');
     val_numeric($errors, 'no_hp_siswa', $no_hp_siswa, 'No HP Siswa harus berupa angka.');
-
+    
     //validasi ayah(wajib diisi berupa numeric)
     val_required($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah wajib diisi.');
     val_alpha($errors, 'nama_ayah', $nama_ayah, 'Nama Ayah harus berupa huruf dan spasi.'); 
     
     //validasi keadaan ayah (wajib diisi berupa numeric)
     val_required($errors, 'keadaan_ayah', $keadaan_ayah, 'Keadaan Ayah wajib diisi.');
-
+    
     //validasi No hp ortu(wajib diisi berupa numeric)
     if (!empty($no_hp_ayah)) {
         val_numeric($errors, 'no_hp_ayah', $no_hp_ayah, 'No Hp harus berupa angka.');
@@ -122,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($pekerjaan_ayah)) {
         val_alpha($errors, 'pekerjaan_ayah', $pekerjaan_ayah, 'Pekerjaan Ayah harus berupa huruf dan spasi.'); 
     }
-
+    
 
     //validasi ibu siswa(wajib diisi berupa huruf)
     val_required($errors, 'nama_ibu', $nama_ibu, 'Nama Ibu wajib diisi.');
@@ -130,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //validasi keadaan ibu(wajib diisi berupa huruf)
     val_required($errors, 'keadaan_ibu', $keadaan_ibu, 'Keadaan Ibu wajib diisi.');
-
+    
        //validasi No hp ortu(wajib diisi berupa numeric)
     if (!empty($no_hp_ibu)) {
         val_numeric($errors, 'no_hp_ibu', $no_hp_ibu, 'No Hp harus berupa angka.');
@@ -144,27 +142,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($pekerjaan_ibu)) {
         val_alpha($errors, 'pekerjaan_ibu', $pekerjaan_ibu, 'Pekerjaan Ibu harus berupa huruf dan spasi.'); 
     }
-
+    
 
     //validasi files(wajib diisi dan menerima file jpg,jpeg,png dan pdf dengan ukuran 2 mb)
     val_file($errors,'kk',$_FILES['kk'],['jpg', 'jpeg', 'png', 'pdf'],2,'Format file tidak didukung.');
-
+    
     val_file($errors,'akte',$_FILES['akte'],['jpg', 'jpeg', 'png', 'pdf'],2,'Format file tidak didukung.');
-
+    
     val_file($errors,'ijazah',$_FILES['ijazah'],['jpg', 'jpeg', 'png', 'pdf'],2,'Format file tidak didukung.');
-
+    
    val_file($errors,'foto',$_FILES['foto'],['jpg', 'jpeg', 'png', 'pdf'],2,'Format file tidak didukung.');
 
-    if (empty($errors)) {
-        proses_pendaftaran($_POST,$_FILES);
-        header("Location: pendaftaran_selesai.php");
-        exit();
+   if (empty($errors)) {
+       proses_pendaftaran($_POST,$_FILES);
+       header("Location: pendaftaran_selesai.php");
+       exit();
     }
 }
 
 $jurusan=jurusan();
 $kebutuhan=kebutuhan();
- ?>
+require_once "../includes/header.php";
+require_once "../includes/navbarSiswa.php";
+?>
 
 <!-- form pendaftaran siswa  -->
 <div class="form_pendaftaran">

@@ -2,12 +2,10 @@
     require_once 'cekLoginAdmin.php';
     require_once "../database.php";
     require_once "../validasi.php";
-    require_once "../includes/header.php";
-    require_once "../includes/navbarAdmin.php";
-
+    
     $errors=[];
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-
+        
         // validasi nama kebutuhan
         val_required($errors,"nama_k",$_POST["nama_kebutuhan"],"Nama kebutuhan wajib diisi.");
         val_alphanumeric($errors,"nama_k",$_POST["nama_kebutuhan"],"Nama kebutuhan harus berupa huruf dan angka.");
@@ -20,6 +18,8 @@
             header("Location:kebutuhan.php");
         }
     }
+    require_once "../includes/header.php";
+    require_once "../includes/navbarAdmin.php";
 ?>
 <div class="tambah_kebutuhan_container">
     <div>

@@ -1,9 +1,9 @@
 <?php
     require_once 'cekLoginSiswa.php';
+    $kebutuhan=kebutuhan();
     require_once '../database.php';
     require_once '../includes/header.php';
     require_once '../includes/navbarSiswa.php';
-    $kebutuhan=kebutuhan();
 ?>
 <div class="kebutuhan_siswa">
     <div>

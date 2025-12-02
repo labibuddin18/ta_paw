@@ -4,9 +4,9 @@
 // Koneksi ke database dan fungsi
     require_once '../database.php';
 // Header dan navbar admin
+$jurusan=jurusan();
     require_once '../includes/header.php';
     require_once '../includes/navbarAdmin.php';
-    $jurusan=jurusan();
 ?>
 <!--  -->
 <div class="jurusan">

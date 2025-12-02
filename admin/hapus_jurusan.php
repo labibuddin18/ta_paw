@@ -1,18 +1,18 @@
 <?php
 // Mengecek apakah admin sudah login
 require_once 'cekLoginAdmin.php';
-// Header dan navbar admin
-require_once '../includes/header.php';
-require_once '../includes/navbarAdmin.php';
 require_once "../database.php";
 
 if (isset($_GET["ID_JURUSAN"])) {
     $id=$_GET["ID_JURUSAN"];
-        $stmnt=$pdo->prepare("DELETE FROM jurusan WHERE ID_JURUSAN=:id");
-        $stmnt->bindValue(':id',$id);
-        $stmnt->execute();
+    $stmnt=$pdo->prepare("DELETE FROM jurusan WHERE ID_JURUSAN=:id");
+    $stmnt->bindValue(':id',$id);
+    $stmnt->execute();
     header("Location:jurusan.php");
 }
+// Header dan navbar admin
+require_once '../includes/header.php';
+require_once '../includes/navbarAdmin.php';
 ?>
 
 <h2>Konfirmasi Hapus</h2>

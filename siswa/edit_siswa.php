@@ -4,8 +4,6 @@ require_once 'cekLoginSiswa.php';
 $idSiswa = $_SESSION['ID_USER'];
 
 require_once "../database.php";
-require_once "../includes/header.php";
-require_once "../includes/navbarSiswa.php";
 
 $errors  = [];
 $success = "";
@@ -37,18 +35,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email    = trim($_POST['email'] ?? '');
     $pass     = $_POST['password'] ?? '';
     $pass2    = $_POST['password_confirm'] ?? '';
-
+    
     // Validasi sederhana
     if ($username === '') {
         $errors['username'] = "Username tidak boleh kosong.";
     }
-
+    
     if ($email === '') {
         $errors['email'] = "Email tidak boleh kosong.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = "Format email tidak valid.";
     }
-
+    
     if ($pass !== '' || $pass2 !== '') {
         if ($pass !== $pass2) {
             $errors['password'] = "Password dan konfirmasi password tidak sama.";
@@ -56,14 +54,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $errors['password'] = "Password minimal 8 karakter.";
         }
     }
-
+    
     // Upload foto (Hanya ke folder, TIDAK KE DATABASE)
     $newFotoName = null;
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] === UPLOAD_ERR_OK) {
         $tmpName = $_FILES['foto']['tmp_name'];
         $origName = $_FILES['foto']['name'];
         $size = $_FILES['foto']['size'];
-
+        
         // Batasi ukuran misalnya 2MB
         if ($size > 2 * 1024 * 1024) {
             $errors['foto'] = "Ukuran foto maksimal 2MB.";
@@ -75,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 $newFotoName = "siswa_" . $idSiswa . "." . $ext; // Nama file tidak pakai time() agar selalu menimpa file lama
                 $dest = __DIR__ . "/uploads/" . $newFotoName;
-
+                
                 if (!is_dir(__DIR__ . "/uploads")) {
                     mkdir(__DIR__ . "/uploads", 0777, true);
                 }
@@ -94,22 +92,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'USERNAME_SISWA' => $username,
             'EMAIL'          => $email,
         ];
-
+        
         if ($pass !== '' && $pass === $pass2) {
             $fields['PASSWORD_SISWA'] = md5($pass); // samakan dengan register/login
         }
-
+        
         // Susun query UPDATE dinamis
         $setParts = [];
         $params   = [':id' => $idSiswa];
-
+        
         foreach ($fields as $col => $val) {
             $setParts[] = "$col = :$col";
             $params[":$col"] = $val;
         }
-
+        
         $sql = "UPDATE siswa SET " . implode(", ", $setParts) . " WHERE ID_SISWA = :id";
-
+        
         try {
             $stmt = $pdo->prepare($sql);
             $stmt->execute($params);
@@ -117,28 +115,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Update nilai yang ditampilkan
             $currentUsername = $username;
             $currentEmail    = $email;
-
+            
             $success = "Profil berhasil diperbarui.";
             
             // Tambahkan pesan sukses untuk foto jika upload berhasil
             if ($newFotoName !== null && empty($errors['foto'])) {
                 $success .= " Foto profil berhasil diperbarui di folder uploads.";
             }
-
+            
         } catch (PDOException $e) {
             // Error ini sekarang hanya muncul jika ada masalah di kolom selain FOTO
             $errors['global'] = "Gagal memperbarui profil: " . htmlspecialchars($e->getMessage());
         }
     }
 }
+require_once "../includes/header.php";
+require_once "../includes/navbarSiswa.php";
 ?>
 <div class="edit_profil"><div class="avatar_wrap">
-        <?php 
+    <?php 
         // Cari file foto di folder uploads menggunakan ID siswa dan ekstensi yang umum
         $foundFoto = false;
         $extensions = ['jpg', 'jpeg', 'png', 'gif'];
         $displayFotoName = null;
-
+        
         foreach ($extensions as $ext) {
             $testName = "siswa_" . $idSiswa . "." . $ext;
             if (file_exists(__DIR__ . "/uploads/" . $testName)) {
