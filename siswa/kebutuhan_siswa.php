@@ -1,7 +1,7 @@
 <?php
     require_once 'cekLoginSiswa.php';
-    $kebutuhan=kebutuhan();
     require_once '../database.php';
+    $kebutuhan=kebutuhan();
     require_once '../includes/header.php';
     require_once '../includes/navbarSiswa.php';
 ?>
