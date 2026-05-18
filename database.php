@@ -1,8 +1,8 @@
 <?php
-$host='gcp.gajahweb.tech';
+$host='localhost';
 $user='root';
-$password='r9BX6dgKS4e';
-$db='isa_1';
+$password='';
+$db='ppdb';
 try {
     $pdo=new PDO("mysql:host=$host;dbname=$db",$user,$password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
